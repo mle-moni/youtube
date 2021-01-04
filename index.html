@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Youtube Downloader</title>
+	<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+	
+	<link rel="stylesheet" href="bulma.min.css">
+	<style>
+		html {
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<section class="section">
+		<div class="container">
+			<h1 class="title has-text-centered">Téléchargeur de videos Youtube</h1>
+
+			<div class="columns">
+				<div class="column is-4 is-offset-4">
+					<div id="setBox" class="box">
+			
+						<div class="field">
+							<label class="label">Lien de la video</label>
+				
+							<div class="control">
+								<input class="input" id="videoURL" placeholder="https://www.youtube.com/watch?v=TPZ50D6QNFA">
+							</div>
+						</div>
+
+						<div class="field">
+							<label class="label">Dossier</label>
+				
+							<div class="control">
+								<button class="button is-info has-text-centered" 
+									style="width: 100%;"
+									onclick="chooseFolder()">
+									Choisir un dossier
+								</button>
+								<input class="input" readonly type="text" id="folderPath">
+							</div>
+						</div>
+
+						<div class="field">
+							<label class="label">Nom du fichier</label>
+				
+							<div class="control">
+								<input class="input" value="maVideo" id="fileName" placeholder="monFichier">
+							</div>
+						</div>
+		
+						<div class="notification is-danger" id="errorDiv" style="display: none;">
+							<button class="delete" onclick="hideErrorDiv()"></button>
+							<div id="errorText">
+								Texte d'erreur
+							</div>
+						</div>
+			
+						<div class="control">
+							<button class="button is-primary is-fullwidth" id="startDownload">Download</button>
+						</div>
+					</div>
+					<div id="waitBox" class="box" style="display: none;">
+						<label class="label has-text-centered">Traitement en cours</label>
+						<progress class="progress is-medium is-dark" max="100"></progress>
+					</div>
+					<div id="endBox" class="box" style="display: none;">
+						<label class="label is-large has-text-centered">C'est fini !</label>
+						<div class="field">				
+							<div class="control">
+								<button class="button is-primary has-text-centered" 
+									style="width: 100%;"
+									onclick="resetPage()">
+									Télécharger une autre video
+								</button>
+							</div>
+						</div>
+						<div class="field">				
+							<div class="control">
+								<button class="button is-link has-text-centered" 
+									style="width: 100%;"
+									onclick="openFolder()">
+									Ouvrir le dossier pour voir la video
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/downloader.js"></script>
+</body>
+</html>
