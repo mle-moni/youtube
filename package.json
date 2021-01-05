@@ -1,7 +1,7 @@
 {
   "name": "youtube",
-  "version": "1.2.1",
-  "description": "Small app to downloads youtube videos",
+  "version": "1.2.2",
+  "description": "Petite application pour télécharger des videos YouTube",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
@@ -15,9 +15,9 @@
   },
   "build": {
     "appId": "fr.mle-moni.youtube",
+    "asar": false,
     "win": {
       "target": [
-        "portable",
         "nsis"
       ]
     },
