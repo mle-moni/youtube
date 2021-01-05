@@ -5,7 +5,11 @@ const cp = require('child_process');
 const ytdl = require("ytdl-core");
 const { ipcRenderer, shell } = require('electron');
 const ffmpegFluent = require("fluent-ffmpeg");
-const ffmpeg = require('ffmpeg-static');
+const ffmpeg = require('ffmpeg-static').replace(
+    'app.asar',
+    'app.asar.unpacked'
+);
+ffmpegFluent.setFfmpegPath(ffmpeg);
 
 // my modules
 const downloadBasicMP4 = require("./js/downloadBasicMP4");

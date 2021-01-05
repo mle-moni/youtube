@@ -1,6 +1,6 @@
 {
   "name": "youtube",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Petite application pour télécharger des videos YouTube",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,6 @@
   },
   "build": {
     "appId": "fr.mle-moni.youtube",
-    "asar": false,
     "win": {
       "target": [
         "nsis"
