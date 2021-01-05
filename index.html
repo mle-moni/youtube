@@ -15,11 +15,11 @@
 <body>
 	<section class="section">
 		<div class="container">
-			<h1 class="title has-text-centered">Téléchargeur de videos Youtube</h1>
-
+			
 			<div class="columns">
 				<div class="column is-4 is-offset-4">
 					<div id="setBox" class="box">
+						<h1 class="title has-text-centered">Téléchargeur de videos Youtube</h1>
 			
 						<div class="field">
 							<label class="label">Lien de la video</label>
@@ -51,19 +51,38 @@
 						</div>
 		
 						<div class="notification is-danger" id="errorDiv" style="display: none;">
-							<button class="delete" onclick="hideErrorDiv()"></button>
+							<button class="delete" id="hideErrorButton"></button>
 							<div id="errorText">
 								Texte d'erreur
 							</div>
 						</div>
+
+						<div class="field">
+							<label class="label">Options</label>
+				
+							<div class="select is-rounded">
+								<select id="inputOptions">
+									<option value="mp4">Video, téléchargement rapide</option>
+									<option value="mp4-hd">Video, qualité maximum</option>
+									<option disabled value="mp3">Audio, mp3</option>
+								</select>
+							</div>
+						</div>
 			
 						<div class="control">
-							<button class="button is-primary is-fullwidth" id="startDownload">Download</button>
+							<button class="button is-primary is-fullwidth" id="startDownload">Télécharger</button>
 						</div>
 					</div>
 					<div id="waitBox" class="box" style="display: none;">
 						<label class="label has-text-centered">Traitement en cours</label>
-						<progress class="progress is-medium is-dark" max="100"></progress>
+						<progress id="progressStandalone" class="progress is-medium is-dark" max="100"></progress>
+					</div>
+					<div id="percentsBox" class="box" style="display: none;">
+						<h3 class="title">Traitement en cours</h3>
+						<label class="label has-text-centered">Video</label>
+						<progress id="progressVideo" class="progress is-primary" max="100"></progress>
+						<label class="label has-text-centered">Audio</label>
+						<progress id="progressAudio" class="progress is-link" max="100"></progress>
 					</div>
 					<div id="endBox" class="box" style="display: none;">
 						<label class="label is-large has-text-centered">C'est fini !</label>
