@@ -10,6 +10,19 @@
 		html {
 			overflow: auto;
 		}
+		#notification {
+			position: fixed;
+			bottom: 20px;
+			left: 20px;
+			width: 200px;
+			padding: 20px;
+			border-radius: 5px;
+			background-color: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+		.hidden {
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -109,6 +122,17 @@
 			</div>
 		</div>
 	</section>
+	<div id="notification" class="hidden">
+		<p id="message"></p>
+		<button id="close-button" onClick="closeNotification()">
+		  Close
+		</button>
+		<button id="restart-button" onClick="restartApp()" class="hidden">
+		  Restart
+		</button>
+	  </div>
+	<footer id="version" style="position: absolute; bottom: 5px; right: 5px;"></footer>
 	<script src="js/downloader.js"></script>
+	<script src="js/updatesNotifs.js"></script>
 </body>
 </html>

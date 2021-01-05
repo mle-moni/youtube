@@ -1,0 +1,4 @@
+appId: fr.mle-moni.youtube
+publish:
+  provider: github
+  token: pouet
