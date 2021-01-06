@@ -14,6 +14,7 @@ ffmpegFluent.setFfmpegPath(ffmpeg);
 // my modules
 const downloadBasicMP4 = require("./js/downloadBasicMP4");
 const downloadMaxResMP4 = require("./js/downloadMaxResMP4");
+const downloadMP3 = require("./js/downloadMP3");
 const gui = require("./js/domElements");
 const getPercent = require("./js/utils/getPercent");
 
@@ -87,6 +88,7 @@ function chooseOption(url, filePath) {
 			downloadMaxResMP4(url, filePath);
 			break;
 		case "mp3":
+			downloadMP3(url, filePath);
 			break;
 	}
 }

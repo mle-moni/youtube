@@ -1,6 +1,6 @@
 {
   "name": "youtube",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Petite application pour télécharger des videos YouTube",
   "main": "index.js",
   "scripts": {

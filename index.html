@@ -5,27 +5,21 @@
     <title>Youtube Downloader</title>
 	<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 	
-	<link rel="stylesheet" href="bulma.min.css">
+	<link rel="stylesheet" href="css/bulma.min.css">
+	<link rel="stylesheet" href="css/scrollbar.css">
 	<style>
 		html {
 			overflow: auto;
 		}
-		#notification {
-			position: fixed;
-			bottom: 20px;
-			left: 20px;
-			width: 200px;
-			padding: 20px;
-			border-radius: 5px;
-			background-color: white;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		.moto {
+			margin: auto;
 		}
 		.hidden {
 			display: none;
 		}
 	</style>
 </head>
-<body>
+<body id="simple-scrollbar">
 	<section class="section">
 		<div class="container">
 			
@@ -77,7 +71,7 @@
 								<select id="inputOptions">
 									<option value="mp4">Video, téléchargement rapide</option>
 									<option value="mp4-hd">Video, qualité maximum</option>
-									<option disabled value="mp3">Audio, mp3</option>
+									<option value="mp3">Audio, mp3</option>
 								</select>
 							</div>
 						</div>
@@ -120,18 +114,25 @@
 					</div>
 				</div>
 			</div>
+			<div class="columns">
+				<div class="column is-4 is-offset-4">
+
+					<div class="notification is-info hidden" id="notification">
+						<button id="close-button" class="delete" onClick="closeNotification()"></button>
+						<p id="message" style="font-size: 20px;">Les informations de mises a jour apparaîtront ici.</p>
+						<br>
+						<div style="display: flex; width: 100%;">
+							<button id="restart-button" onClick="restartApp()" class="button is-primary moto hidden">
+								Relancer
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 	</section>
-	<div id="notification" class="hidden">
-		<p id="message"></p>
-		<button id="close-button" onClick="closeNotification()">
-		  Close
-		</button>
-		<button id="restart-button" onClick="restartApp()" class="hidden">
-		  Restart
-		</button>
-	  </div>
-	<footer id="version" style="position: absolute; bottom: 5px; right: 5px;"></footer>
+	<footer id="version" style="position: fixed; bottom: 5px; right: 5px;"></footer>
 	<script src="js/downloader.js"></script>
 	<script src="js/updatesNotifs.js"></script>
 </body>

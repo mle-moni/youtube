@@ -11,12 +11,12 @@ ipcRenderer.on('app_version', (event, arg) => {
 
 ipcRenderer.on('update_available', () => {
 	ipcRenderer.removeAllListeners('update_available');
-	message.innerText = 'A new update is available. Downloading now...';
+	message.innerText = 'Une nouvelle mise à jour est disponible, téléchargement en cours...';
 	notification.classList.remove('hidden');
 });
 ipcRenderer.on('update_downloaded', () => {
 	ipcRenderer.removeAllListeners('update_downloaded');
-	message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
+	message.innerText = "Mise à jour téléchargée. Elle sera installée au prochain lancement de l'application. Relancer maintenant ?";
 	restartButton.classList.remove('hidden');
 	notification.classList.remove('hidden');
 });
